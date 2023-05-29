@@ -1,5 +1,5 @@
-#include<Wire.h>                   //Include Wire library for using I2C functions 
-#define MCP4725 0x61              //MCP4725 address as 0x61 Change yours accordingly
+#include<Wire.h>                   
+#define MCP4725 0x61              
 
 unsigned int adc;
 byte buffer[3];                   
@@ -14,7 +14,7 @@ void loop()
   buffer[0] = 0b01000000;            //Sets the buffer0 with control byte (010-Sets in Write mode)
   adc = analogRead(A0) * 4;          //Read Analog value from pin A0 and convert into digital (0-1023) multiply with 4 gives (0-4096)
 
-  float ipvolt = (5.0/4096.0)* adc;  //Finding voltage formula (A0)
+  float ipvolt = (5.0/4096.0)* adc;  //Finding voltage formula (output A0)
   buffer[1] = adc >> 4;              //Puts the most significant bit values
   buffer[2] = adc << 4;              //Puts the Least significant bit values
   Wire.beginTransmission(MCP4725);         //Joins I2C bus with MCP4725 with 0x61 address
