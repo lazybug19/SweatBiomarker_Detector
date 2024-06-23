@@ -1,6 +1,6 @@
 # Rapid Sweat Biomarker Detector
 
-Designed and implemented an IoT-enable, non-invasive and portable data acquisition system, backed by a simple UI using Flutter (underway) to visualize CV graphs after biomarkers detection. 
+Designed and implemented an IoT-enabled, non-invasive and portable data acquisition system to visualize CV graphs after biomarkers detection. 
 
 # Sensors/Tech used
 <ul>
